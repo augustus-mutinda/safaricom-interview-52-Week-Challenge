@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "52 Week Challenge"
 include(":app")
- 
+include(":data")

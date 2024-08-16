@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">52 Week Challenge</string>
+    <string name="please_choose_your_language">Please choose your language</string>
+    <string name="english">English</string>
+    <string name="swahili">Swahili</string>
+    <string name="learn_more">Learn More</string>
+    <string name="tncs_onboarding">By selecting “Get Started” you acknowledge that you have read and agreed to our Privacy Policy  and the Terms and Conditions.</string>
+    <string name="get_started">Get Started</string>
+    <string name="restart_required">We need to restart</string>
+    <string name="restart_required_message">To change your language preference, we have to restart the application</string>
+    <string name="cancel">Cancel</string>
+    <string name="restart">Restart</string>
+    <string name="language">Language</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="starting_amount_ksh">Starting Amount (Ksh)</string>
+    <string name="update_savings">Update Savings</string>
+
 </resources>

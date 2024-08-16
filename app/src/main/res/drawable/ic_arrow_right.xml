@@ -1,0 +1,35 @@
+<!--
+  ~ Copyright (c) 2024. Safaricom PLC LTD
+  ~ Created: 10/06/2024.
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ You may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at http://www.apache.org/licenses/LICENS...
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on
+  ~ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+  ~ either express or implied. See the License for the specific language
+  ~ governing permissions and limitations under the License.
+  ~ Last modified: 10/06/2024, 18:55
+  ~ By Augustus Mutinda, amavinda@safaricom.co.ke
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+  <path
+      android:pathData="M10.823,4.448L15.375,9L10.823,13.552"
+      android:strokeLineJoin="round"
+      android:strokeWidth="1.5"
+      android:fillColor="#00000000"
+      android:strokeColor="#0072BC"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M2.625,9H15.248"
+      android:strokeLineJoin="round"
+      android:strokeWidth="1.5"
+      android:fillColor="#00000000"
+      android:strokeColor="#0072BC"
+      android:strokeLineCap="round"/>
+</vector>
