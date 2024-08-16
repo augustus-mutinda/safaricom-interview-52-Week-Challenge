@@ -60,7 +60,7 @@ class SavingsRepositoryImpl(private val savingsDao: SavingsDao) : SavingsReposit
             insertSavings(savings)
 
             // Increase the amount for the next week by Ksh. 50
-            currentAmount += initialAmount
+            currentAmount += 50
         }
     }
 
