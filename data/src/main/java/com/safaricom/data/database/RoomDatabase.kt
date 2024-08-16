@@ -1,4 +1,4 @@
-package com.safaricom.data.services
+package com.safaricom.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
@@ -12,7 +12,7 @@ import com.safaricom.data.models.Savings
  * database operations on the `Savings` entity.
  * @property savingsDao The DAO for accessing and manipulating savings data.
  */
-@Database(entities = [Savings::class], version = 1, exportSchema = false)
+@Database(entities = [Savings::class], version = 3, exportSchema = false)
 abstract class SavingsDatabase : RoomDatabase() {
 
     /**

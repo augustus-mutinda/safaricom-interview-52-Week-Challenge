@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey
 data class Savings(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val week: Int,
+    val date: String,
     val amount: Double,
+    val total: Double,
     var saved: Boolean = false
 )

@@ -44,7 +44,14 @@ fun SavingsList(modifier: Modifier, viewModel: SavingsViewModel) {
                         RegularTextView("Week ${saving.week}")
                         MediumTextView("Ksh. ${saving.amount}")
                     }
-
+                    Column(modOf().weight(1f)) {
+                        RegularTextView("Day")
+                        MediumTextView("Ksh. ${saving.amount}")
+                    }
+                    Column(modOf().weight(1f)) {
+                        RegularTextView("Total")
+                        MediumTextView("Ksh. ${saving.total}")
+                    }
                     Center(
                         modifier = modOf()
                             .background(
@@ -65,7 +72,7 @@ fun SavingsList(modifier: Modifier, viewModel: SavingsViewModel) {
                             }
                     ) {
                         MediumTextView(
-                            if (saving.saved) "Saved" else "Save Today",
+                            if (saving.saved) "Saved" else "Save",
                             modifier = modOf(),
                             textColor = if (saving.saved) green else PrimaryColor()
                         )

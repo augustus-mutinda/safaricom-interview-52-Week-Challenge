@@ -3,7 +3,7 @@ package com.safaricom.data
 import androidx.room.Room
 import com.safaricom.data.repositories.SavingsRepository
 import com.safaricom.data.repositories.SavingsRepositoryImpl
-import com.safaricom.data.services.SavingsDatabase
+import com.safaricom.data.database.SavingsDatabase
 import com.safaricom.data.sharedPref.PreferencesHelper
 import com.safaricom.data.sharedPref.PreferencesHelperImpl
 import com.safaricom.data.utils.Constants

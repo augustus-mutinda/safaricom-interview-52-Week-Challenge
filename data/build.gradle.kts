@@ -57,10 +57,23 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.room.runtime)
     implementation("androidx.room:room-ktx:2.5.0")
+    implementation(libs.core.ktx)
     ksp(libs.androidx.room.compiler)
     implementation(libs.koin.android)
     implementation(libs.androidx.security.crypto)
     implementation(libs.koin.androidx.compose)
+
+    // For testing Room
+    testImplementation("androidx.room:room-testing:2.5.0")
+    // For Koin testing
+    testImplementation("io.insert-koin:koin-test:3.3.0")
+    // For coroutine testing
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2")
+    // For general testing
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito:mockito-core:4.6.1")
+    testImplementation("org.mockito:mockito-inline:4.6.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
