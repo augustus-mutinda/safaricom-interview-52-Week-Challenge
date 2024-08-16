@@ -10,6 +10,15 @@ import androidx.security.crypto.MasterKey
 import com.safaricom.data.utils.Languages
 import java.io.File
 
+/**
+ * Implementation of the [PreferencesHelper] interface for managing shared preferences.
+ *
+ * This class provides methods to interact with shared preferences to store and retrieve user settings
+ * and other persistent data.
+ *
+ * @param application The [Context] of the application, used to access the shared preferences.
+ * @param sharedPreferencesFileName The name of the shared preferences file to be used.
+ */
 class PreferencesHelperImpl(
     private val application: Context,
     @PreferenceInfo sharedPreferencesFileName: String
@@ -58,6 +67,11 @@ class PreferencesHelperImpl(
         get() = sharedPreferences.getString(PREF_MSISDN, "")
         set(msisdn) = sharedPreferences.edit().putString(PREF_MSISDN, msisdn).apply()
 
+    override var signedIn: Boolean?
+        get() = sharedPreferences.getBoolean(PREF_SIGNED_IN, false)
+        set(signedIn) = sharedPreferences.edit().putBoolean(PREF_SIGNED_IN, signedIn ?: false)
+            .apply()
+
     @SuppressLint("ApplySharedPref")
     private fun clearPreference() {
         sharedPreferences.edit().clear().commit()
@@ -78,7 +92,8 @@ class PreferencesHelperImpl(
     }
 
     override fun isLoggedIn(): Boolean {
-        return !email.isNullOrEmpty() && !msisdn.isNullOrEmpty()
+//        return !email.isNullOrEmpty() && !msisdn.isNullOrEmpty()
+        return signedIn ?: false
     }
 
     override fun emailText() = if (email.isNullOrEmpty().not()) email.orEmpty() else "Not Available"
@@ -104,5 +119,6 @@ class PreferencesHelperImpl(
         private const val PREF_FULLNAME = "PREF_FULLNAME"
         private const val PREF_MSISDN = "PREF_MSISDN"
         private const val PREF_EMAIL = "PREF_EMAIL"
+        private const val PREF_SIGNED_IN = "PREF_SIGNED_IN"
     }
 }

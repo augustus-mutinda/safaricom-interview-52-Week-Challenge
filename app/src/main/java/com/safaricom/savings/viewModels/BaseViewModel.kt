@@ -18,6 +18,15 @@ open class BaseViewModel : ViewModel() {
     val _loadingState = MediatorLiveData<Event<@ResourceState Int?>>()
     val loadingState: LiveData<Event<@ResourceState Int?>> = _loadingState
 
+    /**
+     * Binds a LiveData source to a MediatorLiveData observer.
+     *
+     * This method sets up an observer on the provided LiveData source and posts any changes
+     * to the MediatorLiveData observer. Useful for combining or managing LiveData sources.
+     *
+     * @param observer The MediatorLiveData that will observe changes from the source LiveData.
+     * @param source The LiveData source that will be observed.
+     */
     fun <R> bindObserver(observer: MediatorLiveData<R>, source: LiveData<R>) {
         observer.apply {
             addSource(source) {
@@ -27,7 +36,8 @@ open class BaseViewModel : ViewModel() {
     }
 
     /**
-     * Cancel all coroutines when the ViewModel is cleared
+     * Called when the ViewModel is no longer used and will be destroyed.
+     * Cancels all coroutines to prevent memory leaks and ensure proper cleanup.
      */
     override fun onCleared() {
         super.onCleared()

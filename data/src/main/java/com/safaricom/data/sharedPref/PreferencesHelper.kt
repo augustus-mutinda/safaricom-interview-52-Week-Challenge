@@ -5,6 +5,7 @@ interface PreferencesHelper {
     var msisdn: String?
     var fullName: String?
     var email: String?
+    var signedIn: Boolean?
 
     fun isLoggedIn(): Boolean
     fun logout()

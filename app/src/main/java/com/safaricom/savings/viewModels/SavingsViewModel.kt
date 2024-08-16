@@ -3,11 +3,9 @@ package com.safaricom.savings.viewModels
 import androidx.lifecycle.MutableLiveData
 import com.safaricom.data.models.Savings
 import com.safaricom.data.repositories.SavingsRepository
-import com.safaricom.data.sharedPref.PreferencesHelper
 import kotlinx.coroutines.launch
 
 class SavingsViewModel(
-    var preferencesHelper: PreferencesHelper,
     var savingsRepository: SavingsRepository
 ) : BaseViewModel() {
     val allSavings = MutableLiveData(listOf<Savings>())
@@ -22,9 +20,10 @@ class SavingsViewModel(
         }
     }
 
-    fun insertSavings(week: Int, amount: Double) {
+    fun paySaving(saving: Savings) {
         bgScope.launch {
-            savingsRepository.insertSavings(Savings(week = week, amount = amount))
+            savingsRepository.paySaving(saving)
+            getAllSavings()
         }
     }
 

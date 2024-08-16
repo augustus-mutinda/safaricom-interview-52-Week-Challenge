@@ -51,7 +51,6 @@ fun OnBoarding(
         ImageView(
             R.drawable.bg_onboarding,
             modOf()
-                .height(IconSize.Banner)
                 .fillMaxWidth()
         )
         Spacer(modifier = modOf().height(IconSize.Huge))
@@ -61,6 +60,7 @@ fun OnBoarding(
             stringResource(R.string.get_started),
             modifier = modOf().fillMaxWidth()
         ) {
+            preferencesHelper.language
             navHostController.navigate(Routes.home)
         }
         MediumSpacer()
