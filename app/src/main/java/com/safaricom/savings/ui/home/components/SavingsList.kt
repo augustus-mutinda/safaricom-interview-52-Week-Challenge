@@ -42,10 +42,10 @@ fun SavingsList(modifier: Modifier, viewModel: SavingsViewModel) {
                 ) {
                     Column(modOf().weight(1f)) {
                         RegularTextView("Week ${saving.week}")
-                        MediumTextView("Ksh. ${saving.amount}")
+                        MediumTextView(saving.date)
                     }
                     Column(modOf().weight(1f)) {
-                        RegularTextView("Day")
+                        RegularTextView("Amount")
                         MediumTextView("Ksh. ${saving.amount}")
                     }
                     Column(modOf().weight(1f)) {
