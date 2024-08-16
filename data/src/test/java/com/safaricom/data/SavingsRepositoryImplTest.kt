@@ -1,17 +1,14 @@
 package com.safaricom.data
 
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
 import com.safaricom.data.dao.SavingsDao
-import com.safaricom.data.repositories.SavingsRepositoryImpl
 import com.safaricom.data.database.SavingsDatabase
+import com.safaricom.data.repositories.SavingsRepositoryImpl
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
 import org.koin.core.context.startKoin
-import org.koin.dsl.module
 import org.koin.test.KoinTest
 
 class SavingsRepositoryImplTest : KoinTest {
@@ -22,17 +19,10 @@ class SavingsRepositoryImplTest : KoinTest {
 
     @Before
     fun setup() {
-        // Start Koin with a module for the test
+
+        // Start Koin with the test module
         startKoin {
-            modules(module {
-                single {
-                    Room.inMemoryDatabaseBuilder(
-                        ApplicationProvider.getApplicationContext(), SavingsDatabase::class.java
-                    ).build()
-                }
-                single { get<SavingsDatabase>().savingsDao() }
-                single { SavingsRepositoryImpl(get()) }
-            })
+            modules(testModule)
         }
 
         // Inject dependencies
